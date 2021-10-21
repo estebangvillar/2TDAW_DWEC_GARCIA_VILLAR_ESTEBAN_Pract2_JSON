@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(167, 167, 167);
+}
+
+.coche{
+    border: 1px solid;
+    width: 70%;
+    border-radius: 3px;
+    text-align: center;
+    margin: auto;
+    margin-top: 7.5px;
+    margin-bottom: 7.5;
+    -webkit-box-shadow: 3px 6px 15px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 6px 15px -1px rgba(0,0,0,0.75);
+    box-shadow: 3px 6px 15px -1px rgba(0,0,0,0.75);
+}
+
+#marca,#imagen{
+    margin: 5px;
+}
+
+#imagen{
+    width: 600px;
+    border-radius: 7px;
+}
