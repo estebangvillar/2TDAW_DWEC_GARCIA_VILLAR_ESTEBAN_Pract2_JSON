@@ -46,5 +46,11 @@ const mostrarCoche=(coche)=>{
                     `);                             
 }
 
+filtrado.sort(
+    (a,b)=>{
+        //return b["precio"]-a["precio"];
+        return a["nombre"].localeCompare(b["nombre"]);
+    }
+)
 
 coches.forEach(mostrarCoche);
