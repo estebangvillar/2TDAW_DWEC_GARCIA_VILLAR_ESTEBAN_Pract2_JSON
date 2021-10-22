@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body{
     background-color: rgb(167, 167, 167);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .coche{
@@ -19,7 +22,36 @@ body{
     margin: 5px;
 }
 
+#marca{
+    font-weight: bold;
+    font-size: 150%;
+}
+
+label{
+    font-size: 120%;
+    font-style: oblique;
+
+}
+
+p{
+    font-size: 120%;
+    font-style: oblique;
+}
+
+legend{
+    font-size: 150%;
+    font-style: inherit;
+}
+
 #imagen{
     width: 600px;
     border-radius: 7px;
+}
+
+#desc{
+    margin-top: 6px;
+}
+
+fieldset{
+    margin-bottom: 3px;
 }
