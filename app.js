@@ -4,10 +4,13 @@ const mostrarCoche=(coche)=>{
     document.write(`<div class="coche">
                         <p id="marca">${coche["marca"]}</p>
                         <p id="modelo">${coche["modelo"]}</p>
+                        <p id="descripcion">${coche["descripcion"]}</p>
+                        <p id="categoria">${coche["categoria"]}</p>
                         <p id="precio">${coche["precio"]}</p>
                         <p id="cv">${coche["cv"]}</p>
                         <p id="matriculado">Matriculado: ${coche["matriculado"]}</p>
                         <p id="fecha">${coche["fechaLanzamiento"]}</p>
+                        <a href="${coche["enlace"]}">Más info</a><br>
                         <img src="${coche["imagen"]}" id="imagen">
                         <form>
                         <fieldset>
@@ -46,11 +49,27 @@ const mostrarCoche=(coche)=>{
                     `);                             
 }
 
-filtrado.sort(
-    (a,b)=>{
-        //return b["precio"]-a["precio"];
-        return a["nombre"].localeCompare(b["nombre"]);
-    }
-)
+let categoria = prompt("Elige la categoría:");
 
-coches.forEach(mostrarCoche);
+let filtrado = coches.filter(
+    (coches)=>{
+        return coches["categoria"].toUpperCase().includes(categoria.toUpperCase());
+    }
+);
+
+let orden = prompt("¿Orden ascendente o descendente?");
+if(orden.toLocaleLowerCase()=='ascendente'){
+    filtrado.sort(
+        (a, b) => {
+            return a["modelo"].localeCompare(b["modelo"]);
+        });
+        filtrado.forEach(mostrarCoche);
+}else if(orden.toLocaleLowerCase()=='descendente'){
+    filtrado.sort(
+        (a, b) => {
+            return b["modelo"].localeCompare(a["modelo"]);
+        });
+        filtrado.forEach(mostrarCoche);
+}else{
+    filtrado.forEach(mostrarCoche);
+}
